@@ -42,7 +42,7 @@ ClassFn.prototype.stringify = function(string, statuses) {
   buf = buf.join(' ');
 
   var output = [];
-  for(var i = 0; i < this.bases.length; i++) {
+  for (var i = 0; i < this.bases.length; i++) {
     var base = this.bases[i];
     output.push(buf.replace(/&/g, base));
   }
