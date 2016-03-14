@@ -46,9 +46,9 @@ div(class=$('$'))
 yields
 
 ```html
-<div class="StatusComponent StatusComponent-is-global1">
-  <div class="StatusComponent-foo StatusComponent-foo-is-global1 StatusComponent-foo-this-is-true"></div>
-  <div class="StatusComponent-bar StatusComponent-bar-is-global1"></div>
+<div class="StatusComponent StatusComponent-is-global-1">
+  <div class="StatusComponent-foo StatusComponent-foo-is-global-1 StatusComponent-foo-this-is-true"></div>
+  <div class="StatusComponent-bar StatusComponent-bar-is-global-1"></div>
 </div>
 ```
 
