@@ -38,7 +38,7 @@ yields
 import classnames from 'ui-kit-classnames'
 var $ = classnames('StatusComponent', props, {isGlobal1: true, isGlobal2: false})
 
-div(class=$('$'))
+div(class=$('&'))
   div(class=$('>-foo', {thisIsTrue: true}))
   div(class=$('>-bar', {thisIsFalse: false}))
 ```
