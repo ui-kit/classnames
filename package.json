@@ -1,0 +1,11 @@
+{
+  "name": "ui-kit-classnames",
+  "version": "1.0.0",
+  "description": "compose classnames for components",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Michael Andrew Vanasse <mail@mndvns.com>",
+  "license": "MIT"
+}
