@@ -1,26 +1,31 @@
 const ARROW_CODE = '>'.charCodeAt(0);
 
-export default function(base, props, statuses = {}) {
+module.exports = classnames;
+module.exports['default'] = classnames;
+
+function classnames(base, props, statuses) {
+  props = props || {};
+  statuses = statuses || {};
   var bases = [base];
   var prop = props['&'];
   if (prop) {
     if (typeof prop === 'string') prop = prop.split(' ');
-    bases = prop.map(p => p.replace(/&/g, base));
+    bases = prop.map(p => p.replace(/(&|@)/g, base));
   }
   for (var k in statuses) {
     if (!statuses[k]) delete statuses[k];
   }
-  return new ClassFn(bases, statuses);
+  return new ClassNames(bases, statuses);
 };
 
-function ClassFn(bases, statuses) {
+function ClassNames(bases, statuses) {
   this.bases = bases;
   this.statuses = statuses;
   this.store = [];
   return this.stringify.bind(this);
 };
 
-ClassFn.prototype.stringify = function(string, statuses) {
+ClassNames.prototype.stringify = function(string, statuses) {
   var level = 0;
 
   if (string.charCodeAt(0) === ARROW_CODE) {
@@ -31,7 +36,7 @@ ClassFn.prototype.stringify = function(string, statuses) {
 
   this.store[level] = string;
 
-  var value = this.store.join('');
+  var value = this.store.slice(0, level + 1).join('');
 
   var buf = [value];
   statuses = Object.assign({}, this.statuses, statuses);
@@ -51,6 +56,6 @@ ClassFn.prototype.stringify = function(string, statuses) {
 };
 
 function toSpinalCase(str) {
-  if (/^[a-z\-]+$/.test(str)) return str;
+  if (/^[a-z0-9\-]+$/.test(str)) return str;
   return str.replace(/([A-Z0-9])/g, $1 => '-' + $1.toLowerCase());
 }

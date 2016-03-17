@@ -32,7 +32,7 @@ yields
 </div>
 ```
 
-## Append statuses
+## Append conditional classes
 
 ```jade
 import classnames from 'ui-kit-classnames'
@@ -94,10 +94,6 @@ yields
   <div class="Thing-greeting BBB-greeting CCC-greeting">hello</div>
 </div>
 ```
-
-## Todo
-
-- tests
 
 ## License
 
