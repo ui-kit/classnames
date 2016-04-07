@@ -7,7 +7,7 @@ function classnames(base, props, statuses) {
   props = props || {};
   statuses = statuses || {};
   var bases = [base];
-  var prop = props['&'];
+  var prop = props && props['&'];
   if (prop) {
     if (typeof prop === 'string') prop = prop.split(' ');
     bases = prop.map(p => p.replace(/(&|@)/g, base));
