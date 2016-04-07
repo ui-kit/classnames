@@ -1,6 +1,6 @@
 {
   "name": "ui-kit-classnames",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "compose classnames for components",
   "main": "index.js",
   "scripts": {
