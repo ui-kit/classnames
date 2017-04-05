@@ -52,6 +52,27 @@ yields
 </div>
 ```
 
+## Dynamic value in conditional classes
+```jade
+import classnames from 'ui-kit-classnames'
+var $ = classnames('StatusComponent', props, {'is-global-@': 'baz'})
+
+//- passing no argument here is the same as '&'
+div(class=$())
+  div(class=$('>-foo', {'local-@': 'dynamic'}))
+  div(class=$('>-bar', {'local-@': ''}))
+```
+
+yields
+
+```html
+<div class="StatusComponent StatusComponent-is-global-baz">
+  <div class="StatusComponent-foo StatusComponent-foo-is-global-baz StatusComponent-foo-local-dynamic"></div>
+  <div class="StatusComponent-bar StatusComponent-bar-is-global-baz"></div>
+</div>
+```
+
+
 ## Rewrite base
 
 `thing.jade`
